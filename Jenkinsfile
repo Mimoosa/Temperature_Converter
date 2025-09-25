@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage ('checking'){
             steps {
-                git branch:'main', url: 'https://github.com/Mimoosa/week6_project_demo.git'
+                git branch:'main', url: 'https://github.com/Mimoosa/Temperature_Converter.git'
             }
         }
         stage ('build') {
