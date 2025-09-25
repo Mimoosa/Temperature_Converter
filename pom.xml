@@ -15,12 +15,6 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.8.1</version>
@@ -33,20 +27,11 @@
             <version>3.5.1</version>
         </dependency>
     </dependencies>
+
     <build>
-        <finalName>tempcon</finalName>
+        <finalName>TemperatureConverter</finalName>
         <plugins>
             <!-- JaCoCo plugin for code coverage -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -66,6 +51,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -73,11 +59,12 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>TemperatureConverter</mainClass>
+                            <mainClass>Main</mainClass> <!-- Correct main class -->
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -90,7 +77,6 @@
                     </includes>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
