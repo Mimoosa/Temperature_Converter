@@ -34,9 +34,19 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>myapp</finalName>
+        <finalName>tempcon</finalName>
         <plugins>
             <!-- JaCoCo plugin for code coverage -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -56,9 +66,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -66,23 +73,9 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>Myapp</mainClass> <!-- Correct main class -->
+                            <mainClass>TemperatureConverter</mainClass>
                         </manifest>
                     </archive>
-                </configuration>
-            </plugin>
-
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M7</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/*Tests.java</include>
-                        <include>**/*TestCase.java</include>
-                    </includes>
                 </configuration>
             </plugin>
 
